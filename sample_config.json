@@ -1,0 +1,33 @@
+
+{
+  "security_groups": [
+    {
+      "name": "test-server",
+      "ingress": [
+        {
+          "protocol": "tcp",
+          "port": 22,
+          "cidr": "0.0.0.0/0"
+        }
+      ]
+    }
+  ],
+  "s3_buckets": [
+    {
+      "name": "test-bucket",
+      "block_public_access": false
+    }
+  ],
+  "iam_policies": [
+    {
+      "name": "test-policy",
+      "statements": [
+        {
+          "effect": "Allow",
+          "action": "*",
+          "resource": "*"
+        }
+      ]
+    }
+  ]
+}

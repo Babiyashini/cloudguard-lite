@@ -1,0 +1,138 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CloudGuard Lite</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f3f6fb;
+            color: #1f2937;
+            margin: 0;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: auto;
+        }
+
+        h1 {
+            color: #1d4ed8;
+        }
+
+        .subtitle {
+            color: #64748b;
+        }
+
+        .finding {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-left: 5px solid #dc2626;
+            border-radius: 8px;
+            padding: 18px;
+            margin: 16px 0;
+        }
+
+        .severity {
+            color: #b91c1c;
+            font-weight: bold;
+        }
+
+        .resource {
+            color: #475569;
+        }
+
+        .recommendation {
+            margin-bottom: 0;
+        }
+
+        
+.summary {
+    display: flex;
+    gap: 16px;
+    margin: 24px 0;
+    flex-wrap: wrap;
+}
+
+.summary-card {
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 20px;
+    flex: 1;
+    min-width: 180px;
+}
+
+.summary-card h3 {
+    margin-top: 0;
+    color: #64748b;
+    font-size: 16px;
+}
+
+.summary-number {
+    font-size: 32px;
+    font-weight: bold;
+    color: #1d4ed8;
+    margin-bottom: 0;
+}
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>CloudGuard Lite</h1>
+
+        <p class="subtitle">
+            A simple rule-based cloud security scanner.
+        </p>
+
+        
+<div class="summary">
+    <div class="summary-card">
+        <h3>Total Findings</h3>
+        <p class="summary-number">{{ total_findings }}</p>
+    </div>
+
+    <div class="summary-card">
+        <h3>High Severity</h3>
+        <p class="summary-number">{{ high_findings }}</p>
+    </div>
+</div>
+
+<h2>Security Findings</h2>
+
+
+        {% if findings %}
+            {% for finding in findings %}
+                <div class="finding">
+                    <h3>{{ finding.title }}</h3>
+
+                    <p class="severity">
+                        {{ finding.severity }} — {{ finding.rule_id }}
+                    </p>
+
+                    <p class="resource">
+                        Resource: {{ finding.resource }}
+                    </p>
+
+                    <p class="recommendation">
+                        <strong>Recommendation:</strong>
+                        {{ finding.recommendation }}
+                    </p>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>No findings detected in this sample configuration.</p>
+        {% endif %}
+
+        <p class="subtitle">
+            Demo only: this tool checks selected rules, not every AWS security risk.
+        </p>
+    </div>
+</body>
+</html>
