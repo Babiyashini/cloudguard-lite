@@ -1,6 +1,5 @@
----
+﻿---
 title: CloudGuard Lite
-emoji: ???
 colorFrom: blue
 colorTo: red
 sdk: docker
@@ -110,4 +109,5 @@ The scanner initially detected three findings in the sample configuration. After
 ## Disclaimer
 
 CloudGuard Lite is an educational project and is not a complete cloud security auditing tool. Zero findings means only that the current configuration passed the implemented checks.
+
 
