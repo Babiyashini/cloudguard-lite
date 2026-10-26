@@ -1,5 +1,14 @@
+---
+title: CloudGuard Lite
+emoji: ???
+colorFrom: blue
+colorTo: red
+sdk: docker
+pinned: false
+app_port: 7860
+---
 
-# CloudGuard Lite — Cloud Security Scanner
+# CloudGuard Lite ??? Cloud Security Scanner
 
 A simple rule-based cloud security scanner built with Python and Flask. It checks sample AWS-style configuration data for selected security risks and displays findings and recommendations on a web dashboard.
 
@@ -101,3 +110,4 @@ The scanner initially detected three findings in the sample configuration. After
 ## Disclaimer
 
 CloudGuard Lite is an educational project and is not a complete cloud security auditing tool. Zero findings means only that the current configuration passed the implemented checks.
+
